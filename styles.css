@@ -93,5 +93,7 @@ body { padding-top: 72px; }
 .year-card h4 { margin-top: 0; }
 
 /* GPA input row */
-/* (GPA input styles removed) */
+.year-gpa { font-weight: 600; }
+.year-gpa span { color: #0d6efd; cursor: pointer; }
+.year-gpa span.placeholder { color: #6c757d; cursor: default; }
 

@@ -101,4 +101,47 @@ filterButtons.forEach(button => {
 // GPA inputs: load/save per year to localStorage
 // =========================================================
 
+// Populate GPA display spans from localStorage and allow quick edit
+function initGPADisplays() {
+    try {
+        for (let year = 1; year <= 4; year++) {
+            const display = document.getElementById(`gpa-year-${year}-display`);
+            if (!display) continue;
+
+            const key = `gpa-year-${year}`;
+            const saved = localStorage.getItem(key);
+
+            if (saved !== null && !isNaN(Number(saved))) {
+                display.textContent = Number(saved).toFixed(2);
+                display.classList.remove('placeholder');
+            } else {
+                display.textContent = '-';
+                display.classList.add('placeholder');
+            }
+
+            // allow quick edit: click the value to set a new GPA (0.00 - 4.00)
+            display.addEventListener('click', () => {
+                const current = display.textContent === '-' ? '' : display.textContent;
+                const entry = prompt(`Enter GPA for year ${year} (0.00 - 4.00):`, current);
+                if (entry === null) return; // cancelled
+                const v = parseFloat(entry);
+                if (isNaN(v) || v < 0 || v > 4) {
+                    alert('Please enter a number between 0.00 and 4.00');
+                    return;
+                }
+                const normalized = v.toFixed(2);
+                localStorage.setItem(key, normalized);
+                display.textContent = normalized;
+                display.classList.remove('placeholder');
+            });
+        }
+    } catch (e) {
+        console.warn('initGPADisplays failed', e);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initGPADisplays();
+});
+
 
