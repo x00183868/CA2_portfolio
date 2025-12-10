@@ -86,3 +86,9 @@ body { padding-top: 72px; }
   border-radius: 50%;
 }
 
+/* Education tables: make them compact and readable */
+.year-table {
+  margin-bottom: 0.5rem;
+}
+.year-card h4 { margin-top: 0; }
+
