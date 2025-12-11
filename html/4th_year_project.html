@@ -27,6 +27,9 @@ rel="stylesheet">
             border: 2px solid #0d6efd;
             margin-bottom: 1.5rem;
         }
+        /* Spinner overlay styling for modal carousel items */
+        .carousel-image-wrapper { min-height: 240px; }
+        .carousel-image-wrapper .spinner-overlay { z-index: 10; }
     </style>
 
     <!-- Your main CSS -->
@@ -227,29 +230,95 @@ gents.                                                                          
                 <div class="modal-body p-0">
                     <div id="carouselOdooModal" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-inner">
+                            <!-- Each carousel-item wraps a picture with WebP preferred and a PNG fallback.
+                                 A spinner overlay is shown until the image's load event fires. -->
                             <div class="carousel-item active">
-                                <img src="../images/large_odoo_main_page.png" class="d-block w-100 img-fluid" alt="Odoo main page">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_main_page.webp" type="image/webp">
+                                        <img src="../images/large_odoo_main_page.png" class="d-block w-100 img-fluid carousel-hero" alt="Odoo main page">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_oodoo_discuss_page.png" class="d-block w-100 img-fluid" alt="Odoo Discuss">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_oodoo_discuss_page.webp" type="image/webp">
+                                        <img src="../images/large_oodoo_discuss_page.png" class="d-block w-100 img-fluid carousel-hero" alt="Odoo Discuss">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_dashboard.png" class="d-block w-100 img-fluid" alt="Odoo dashboard">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_dashboard.webp" type="image/webp">
+                                        <img src="../images/large_odoo_dashboard.png" class="d-block w-100 img-fluid carousel-hero" alt="Odoo dashboard">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_helpdesk.png" class="d-block w-100 img-fluid" alt="Helpdesk overview">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_helpdesk.webp" type="image/webp">
+                                        <img src="../images/large_odoo_helpdesk.png" class="d-block w-100 img-fluid carousel-hero" alt="Helpdesk overview">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_helpdesk1.png" class="d-block w-100 img-fluid" alt="My tickets">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_helpdesk1.webp" type="image/webp">
+                                        <img src="../images/large_odoo_helpdesk1.png" class="d-block w-100 img-fluid carousel-hero" alt="My tickets">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_helpdesk3.png" class="d-block w-100 img-fluid" alt="Tickets list">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_helpdesk3.webp" type="image/webp">
+                                        <img src="../images/large_odoo_helpdesk3.png" class="d-block w-100 img-fluid carousel-hero" alt="Tickets list">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_helpdesk4.png" class="d-block w-100 img-fluid" alt="Tickets kanban">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_helpdesk4.webp" type="image/webp">
+                                        <img src="../images/large_odoo_helpdesk4.png" class="d-block w-100 img-fluid carousel-hero" alt="Tickets kanban">
+                                    </picture>
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="../images/large_odoo_chart.png" class="d-block w-100 img-fluid" alt="Tickets graph">
+                                <div class="carousel-image-wrapper position-relative">
+                                    <div class="spinner-overlay position-absolute top-50 start-50 translate-middle">
+                                        <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+                                    </div>
+                                    <picture>
+                                        <source srcset="../images/large_odoo_chart.webp" type="image/webp">
+                                        <img src="../images/large_odoo_chart.png" class="d-block w-100 img-fluid carousel-hero" alt="Tickets graph">
+                                    </picture>
+                                </div>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselOdooModal" data-bs-slide="prev">
@@ -353,6 +422,32 @@ document.addEventListener('DOMContentLoaded', function () {
         // don't break page if preload fails
         console.warn('Image preload failed', e);
     }
+
+    // Hide spinner overlay on image load (for modal images)
+    function hideSpinnerFor(img){
+        try{
+            if(!img) return;
+            const wrapper = img.closest('.carousel-image-wrapper');
+            if(!wrapper) return;
+            const spinner = wrapper.querySelector('.spinner-overlay');
+            if(spinner){ spinner.style.display = 'none'; }
+        }catch(e){/* ignore */}
+    }
+
+    // Attach load/error handlers and initialize spinner visibility
+    const modalImages = document.querySelectorAll('#carouselOdooModal .carousel-hero');
+    modalImages.forEach(function(img){
+        // if already loaded (cached), hide spinner
+        if(img.complete && img.naturalWidth){ hideSpinnerFor(img); }
+        else {
+            img.addEventListener('load', function(){ hideSpinnerFor(img); });
+            img.addEventListener('error', function(){
+                // hide spinner even on error to avoid stuck spinner; developer can inspect console
+                hideSpinnerFor(img);
+                console.warn('Modal image failed to load:', img.getAttribute('src'));
+            });
+        }
+    });
 });
 </script>
 </body>
