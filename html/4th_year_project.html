@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4th Year Project – Odoo Helpdesk for TUD Health</title>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CUSTOM BLUE THEME -->
+    <style>
+        h2 {
+            border-left: 6px solid #0d6efd;
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .section-box {
+            background: rgba(0, 110, 255, 0.06);
+            border-left: 4px solid #0d6efd;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        img {
+            border: 2px solid #0d6efd;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+
+    <!-- Your main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="internship.html">Internship</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="py-5 text-center text-white" style="background:#0d6efd;">
+    <h1>4th Year Project – Odoo Helpdesk for TUD Health</h1>
+    <p class="lead">Designing and configuring a hospital IT helpdesk using Odoo</p>
+</header>
+
+<div class="container my-5">
+
+    <!-- OVERVIEW -->
+    <section>
+        <h2>Project Overview</h2>
+        <div class="section-box">
+            <p>
+                For my 4th year project I worked with <strong>Odoo Helpdesk</strong> to design a support solution
+                for a fictional healthcare organisation called <strong>TUD Health</strong>. The goal was to configure
+                a cloud based helpdesk where hospital staff could log IT issues, track tickets and monitor service
+                performance using dashboards and KPIs.
+            </p>
+            <p>
+                I set up a dedicated TUD Health database in Odoo, created helpdesk teams and configured ticket stages,
+                communication channels and reporting views. The final system supports two key areas:
+            </p>
+            <ul>
+                <li><strong>Customer Care</strong> – general support for staff</li>
+                <li><strong>Hospital Support Desk</strong> – IT and equipment related tickets</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ENVIRONMENT / DATABASE -->
+    <section>
+        <h2>Environment Setup</h2>
+        <div class="section-box">
+            <p>
+                The project started with the creation of an Odoo online database for TUD Health. The instance could be
+                locked when inactive and reactivated when needed, which is shown below.
+            </p>
+        </div>
+        <!-- rename this file to match whatever you upload -->
+        <img src="odoo_locked.png" class="img-fluid rounded shadow" alt="Odoo database locked screen">
+    </section>
+
+    <!-- COMMUNICATION / DISCUSS APP -->
+    <section>
+        <h2>Internal Communication</h2>
+        <div class="section-box">
+            <p>
+                To support collaboration inside the organisation, I configured the <strong>Discuss</strong> app
+                with multiple channels:
+            </p>
+            <ul>
+                <li><strong>general</strong> – announcements for all employees</li>
+                <li><strong>chill</strong> – informal messages</li>
+                <li><strong>outside work hours</strong> – messages that should not be answered during working time</li>
+                <li><strong>Administrators</strong> – internal channel for system administrators</li>
+            </ul>
+            <p>
+                These channels help separate urgent operational messages from social conversations and admin tasks.
+            </p>
+        </div>
+        <img src="odoo_discuss.png" class="img-fluid rounded shadow" alt="Odoo Discuss channels">
+    </section>
+
+    <!-- DASHBOARDS -->
+    <section>
+        <h2>Helpdesk Dashboards and KPIs</h2>
+        <div class="section-box">
+            <p>
+                The <strong>Dashboards</strong> app was used to visualise performance and workload for the helpdesk.
+                I configured a Helpdesk dashboard that shows:
+            </p>
+            <ul>
+                <li>Total number of tickets in the last period</li>
+                <li>Average time to assign, respond and close tickets</li>
+                <li>Ticket distribution by stage (New, Solved, Waiting for User, Under Investigation)</li>
+                <li>Tickets by team (Customer Care vs Hospital Support Desk)</li>
+                <li>Top customers and top assignees</li>
+            </ul>
+            <p>
+                These KPIs help managers quickly understand the volume and status of support requests.
+            </p>
+        </div>
+        <img src="odoo_dashboard_tickets.png" class="img-fluid rounded shadow" alt="Helpdesk dashboard with KPIs and charts">
+    </section>
+
+    <!-- HELPDESK OVERVIEW -->
+    <section>
+        <h2>Helpdesk Overview</h2>
+        <div class="section-box">
+            <p>
+                Within the <strong>Helpdesk</strong> module I configured teams, SLA targets and ticket
+                categories. The overview page shows my own performance as an agent, including:
+            </p>
+            <ul>
+                <li>Number of open tickets assigned to me</li>
+                <li>High priority or urgent tickets</li>
+                <li>Average open hours</li>
+                <li>SLA success rate across the helpdesk</li>
+            </ul>
+        </div>
+        <img src="odoo_helpdesk_overview.png" class="img-fluid rounded shadow" alt="Helpdesk overview screen">
+    </section>
+
+    <!-- MY TICKETS -->
+    <section>
+        <h2>Working as an Agent</h2>
+        <div class="section-box">
+            <p>
+                I created and worked on several example tickets to simulate real hospital IT issues such as:
+                <em>laptop not starting up</em> and <em>printer not working</em>. The <strong>My Tickets</strong> view
+                shows tickets assigned to me with filters for status and SLA deadlines.
+            </p>
+        </div>
+        <img src="odoo_my_tickets.png" class="img-fluid rounded shadow" alt="My tickets view for Therly as agent">
+    </section>
+
+    <!-- LIST / KANBAN / REPORTING -->
+    <section>
+        <h2>Ticket Lifecycle and Reporting</h2>
+        <div class="section-box">
+            <p>
+                I explored different ways for supervisors to monitor workload and progress:
+            </p>
+            <ul>
+                <li><strong>List view</strong> – all open tickets with priority, assignee, customer and stage</li>
+                <li><strong>Kanban view</strong> – drag and drop tickets between stages such as New, Waiting for User and Under Investigation</li>
+                <li><strong>Reporting graphs</strong> – bar charts of open tickets grouped by team and stage</li>
+            </ul>
+            <p>
+                These views make it easy to see bottlenecks and balance tickets between agents.
+            </p>
+        </div>
+        <img src="odoo_all_tickets_list.png" class="img-fluid rounded shadow" alt="List view of all tickets">
+        <img src="odoo_all_tickets_kanban.png" class="img-fluid rounded shadow" alt="Kanban view of all tickets">
+        <img src="odoo_all_tickets_graph.png" class="img-fluid rounded shadow" alt="Graph report for tickets">
+    </section>
+
+    <!-- TECHNOLOGIES -->
+    <section>
+        <h2>Technologies and Concepts</h2>
+        <div class="section-box">
+            <ul>
+                <li>Odoo cloud platform and Helpdesk module</li>
+                <li>Odoo Discuss and Dashboards apps</li>
+                <li>Ticket workflows and SLA concepts</li>
+                <li>Basic service management and KPI design</li>
+                <li>User roles: agents, managers and customers</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WHAT I LEARNED -->
+    <section>
+        <h2>What I Learned</h2>
+        <div class="section-box">
+            <ul>
+                <li>How to configure a cloud based helpdesk system from scratch</li>
+                <li>How ticket stages, priorities and SLAs impact hospital support workflows</li>
+                <li>How to design dashboards that highlight meaningful performance indicators</li>
+                <li>How to think about user roles (agents, supervisors, staff) and their different needs</li>
+                <li>Improved my ability to document configuration decisions and explain system behaviour</li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-3 bg-dark text-white">
+    © 2025 Therly Kabasele — Odoo Helpdesk for TUD Health
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
