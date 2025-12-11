@@ -1,203 +1,119 @@
-// =========================================================
-// DARK MODE TOGGLE
-// =========================================================
+// Single clean canonical JS used by the pages
+// Keeps functions global where needed (e.g. toggleDarkMode)
 
-// PAGE LOADER: fade out the loader overlay once the page has loaded
+// PAGE LOADER
 window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     if (!loader) return;
-
     setTimeout(() => {
         loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
+        setTimeout(() => loader.style.display = "none", 500);
     }, 300);
 });
 
-
+// DARK MODE
 function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
-
-    // Save preference to localStorage
-    if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+    // toggle class
+    document.body.classList.toggle('dark-mode');
+    // derive current theme and persist
+    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    // runtime test: confirm function is invoked
+    console.log('toggleDarkMode invoked — theme:', theme);
 }
 
-// Apply saved preference on page load
-window.onload = function() {
-    let savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-    }
-};
+// Apply stored theme on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+});
 
-// =========================================================
-// SKILLS PROGRESS BAR ANIMATION
-// =========================================================
-
+// SKILLS PROGRESS
 function animateSkills() {
-    const htmlBar = document.getElementById("htmlBar");
-    const jsBar = document.getElementById("jsBar");
-
-    // Only animate once
-    if (!htmlBar.classList.contains("animated")) {
-        htmlBar.style.width = "90%";
-        jsBar.style.width = "75%";
-
-        htmlBar.classList.add("animated");
-        jsBar.classList.add("animated");
+    const htmlBar = document.getElementById('htmlBar');
+    const jsBar = document.getElementById('jsBar');
+    if (!htmlBar || !jsBar) return;
+    if (!htmlBar.classList.contains('animated')) {
+        htmlBar.style.width = '90%';
+        jsBar.style.width = '75%';
+        htmlBar.classList.add('animated');
+        jsBar.classList.add('animated');
     }
 }
 
-// Detect when the skills section is in view
 function isElementInView(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    );
+    if (!el) return false;
+    const r = el.getBoundingClientRect();
+    return r.top >= 0 && r.bottom <= (window.innerHeight || document.documentElement.clientHeight);
 }
 
-window.addEventListener("scroll", function () {
-    const skillsSection = document.getElementById("skills");
-    if (isElementInView(skillsSection)) {
-        animateSkills();
-    }
+window.addEventListener('scroll', () => {
+    const skills = document.getElementById('skills');
+    if (isElementInView(skills)) animateSkills();
 });
 
-// =========================================================
-// PROJECT FILTERING
-// =========================================================
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const year = button.getAttribute("data-year");
-
-        projectCards.forEach(card => {
-            if (year === "all") {
-                card.style.display = "block";
-            } else if (card.getAttribute("data-year") === year) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-
-        // Highlight active button
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-    });
+// PROJECT FILTERS
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    if (!buttons.length || !cards.length) return;
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+        const year = btn.getAttribute('data-year');
+        cards.forEach(c => c.style.display = (year === 'all' || c.getAttribute('data-year') === year) ? 'block' : 'none');
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }));
 });
 
-
-// =========================================================
-// GPA inputs: load/save per year to localStorage
-// =========================================================
-
-// Populate GPA display spans from localStorage and allow quick edit
+// GPA displays
 function initGPADisplays() {
     try {
-        for (let year = 1; year <= 4; year++) {
-            const display = document.getElementById(`gpa-year-${year}-display`);
-            if (!display) continue;
-
-            const key = `gpa-year-${year}`;
+        for (let y = 1; y <= 4; y++) {
+            const el = document.getElementById(`gpa-year-${y}-display`);
+            if (!el) continue;
+            const key = `gpa-year-${y}`;
             const saved = localStorage.getItem(key);
-
             if (saved !== null && !isNaN(Number(saved))) {
-                display.textContent = Number(saved).toFixed(2);
-                display.classList.remove('placeholder');
+                el.textContent = Number(saved).toFixed(2);
+                el.classList.remove('placeholder');
             } else {
-                display.textContent = '-';
-                display.classList.add('placeholder');
+                el.textContent = '-';
+                el.classList.add('placeholder');
             }
-
-            // allow quick edit: click the value to set a new GPA (0.00 - 4.00)
-            display.addEventListener('click', () => {
-                const current = display.textContent === '-' ? '' : display.textContent;
-                const entry = prompt(`Enter GPA for year ${year} (0.00 - 4.00):`, current);
-                if (entry === null) return; // cancelled
-                const v = parseFloat(entry);
-                if (isNaN(v) || v < 0 || v > 4) {
-                    alert('Please enter a number between 0.00 and 4.00');
-                    return;
-                }
-                const normalized = v.toFixed(2);
-                localStorage.setItem(key, normalized);
-                display.textContent = normalized;
-                display.classList.remove('placeholder');
+            el.addEventListener('click', () => {
+                const cur = el.textContent === '-' ? '' : el.textContent;
+                const val = prompt(`Enter GPA for year ${y} (0.00 - 4.00):`, cur);
+                if (val === null) return;
+                const n = parseFloat(val);
+                if (isNaN(n) || n < 0 || n > 4) return alert('Please enter a number between 0.00 and 4.00');
+                const out = n.toFixed(2);
+                localStorage.setItem(key, out);
+                el.textContent = out;
+                el.classList.remove('placeholder');
             });
         }
-    } catch (e) {
-        console.warn('initGPADisplays failed', e);
-    }
+    } catch (e) { console.warn('initGPADisplays failed', e); }
 }
+document.addEventListener('DOMContentLoaded', initGPADisplays);
 
-document.addEventListener('DOMContentLoaded', function () {
-    initGPADisplays();
-});
-
-// =========================================================
-// Contact email chooser (Gmail/Outlook/Yahoo)
-// =========================================================
-document.addEventListener('DOMContentLoaded', function () {
+// EMAIL CHOOSER
+document.addEventListener('DOMContentLoaded', () => {
     const emailBtn = document.getElementById('emailChooserBtn');
-    const chooserModalEl = document.getElementById('emailChooserModal');
-    if (!emailBtn || !chooserModalEl) return;
-
-    const chooserModal = new bootstrap.Modal(chooserModalEl);
-    emailBtn.addEventListener('click', () => {
-        chooserModal.show();
-    });
-
+    const chooserEl = document.getElementById('emailChooserModal');
+    if (!emailBtn || !chooserEl) return;
+    const modal = new bootstrap.Modal(chooserEl);
+    emailBtn.addEventListener('click', () => modal.show());
     const recipient = 'x00183868@mytudublin.ie';
-
-    // Buttons
-    const btnGmail = document.getElementById('btn-gmail');
-    const btnOutlook = document.getElementById('btn-outlook');
-    const btnYahoo = document.getElementById('btn-yahoo');
-    const btnMailto = document.getElementById('btn-mailto');
-
-    function openInNewTab(url) {
-        window.open(url, '_blank', 'noopener');
-        chooserModal.hide();
-    }
-
-    if (btnGmail) {
-        btnGmail.addEventListener('click', () => {
-            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}`;
-            openInNewTab(url);
-        });
-    }
-
-    if (btnOutlook) {
-        btnOutlook.addEventListener('click', () => {
-            const url = `https://outlook.live.com/owa/?path=/mail/action/compose&to=${encodeURIComponent(recipient)}`;
-            openInNewTab(url);
-        });
-    }
-
-    if (btnYahoo) {
-        btnYahoo.addEventListener('click', () => {
-            const url = `https://compose.mail.yahoo.com/?to=${encodeURIComponent(recipient)}`;
-            openInNewTab(url);
-        });
-    }
-
-    if (btnMailto) {
-        btnMailto.addEventListener('click', () => {
-            const mailto = `mailto:${recipient}`;
-            window.location.href = mailto;
-            chooserModal.hide();
-        });
-    }
+    const btns = {
+        gmail: document.getElementById('btn-gmail'),
+        outlook: document.getElementById('btn-outlook'),
+        yahoo: document.getElementById('btn-yahoo'),
+        mailto: document.getElementById('btn-mailto')
+    };
+    function openNew(u){ window.open(u, '_blank', 'noopener'); modal.hide(); }
+    if (btns.gmail) btns.gmail.addEventListener('click', () => openNew(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}`));
+    if (btns.outlook) btns.outlook.addEventListener('click', () => openNew(`https://outlook.live.com/owa/?path=/mail/action/compose&to=${encodeURIComponent(recipient)}`));
+    if (btns.yahoo) btns.yahoo.addEventListener('click', () => openNew(`https://compose.mail.yahoo.com/?to=${encodeURIComponent(recipient)}`));
+    if (btns.mailto) btns.mailto.addEventListener('click', () => { window.location.href = `mailto:${recipient}`; modal.hide(); });
 });
 
 
