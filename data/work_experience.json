@@ -2,7 +2,7 @@
   {
     "employer": "Ladbrokes, Newbridge, Co. Kildare",
     "logo": "images/ladbrokes.png",
-    "role": "Student Technician",
+    "role": "Customer Manager",
     "dates": "Sep 2021 – May 2022",
     "details": "Assisted with device provisioning, troubleshooting, and documentation for the IT team.",
     "skills": []
@@ -10,7 +10,7 @@
   {
     "employer": "HSE AI & Automation CoE (Dr. Steevens)",
     "logo": "images/hse_logo.jpg",
-    "role": "IT Support Intern / Automation",
+    "role": "Intern in AI & Automation",
     "dates": "Jun 2022 – Aug 2022",
     "details": "Provided automation, RPA support, AI governance and Power Platform development across HSE projects.",
     "skills": [
@@ -25,7 +25,7 @@
   {
     "employer": "Zazzle Ireland (Remote)",
     "logo": "images/zazzle.png",
-    "role": "Work Placement - IT Operations",
+    "role": "Customer Service Representative",
     "dates": "Jun 2021 – Aug 2021",
     "details": "Supported operations tasks including monitoring, ticket triage, and small automation tasks.",
     "skills": []
