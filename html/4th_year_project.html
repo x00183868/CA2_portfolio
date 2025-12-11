@@ -334,6 +334,25 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    // Preload high-res modal images so slides don't appear blank when navigating
+    try {
+        const modalImgs = Array.from(document.querySelectorAll('#carouselOdooModal .carousel-inner img'))
+            .map(img => img.getAttribute('src'))
+            .filter(Boolean)
+            .map(src => src.trim());
+        modalImgs.forEach(src => {
+            // normalize relative path
+            const url = src.startsWith('http') ? src : (new URL(src, window.location.href)).href;
+            const im = new Image();
+            im.src = url;
+            // optional: log errors for debugging
+            im.onerror = () => console.warn('Failed to preload image', url);
+        });
+    } catch (e) {
+        // don't break page if preload fails
+        console.warn('Image preload failed', e);
+    }
 });
 </script>
 </body>
