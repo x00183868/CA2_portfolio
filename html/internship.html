@@ -3,175 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship Experience | HSE AI & Automation</title>
+    <title>Internship Project – HSE AI & Automation</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-
+    <!-- CUSTOM THEME -->
     <style>
-        .hero {
-            background: linear-gradient(to right, #0d6efd, #0a58ca);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .card-custom {
-            border-radius: 12px;
-            box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .card-custom:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-custom h4 {
-            margin-bottom: 15px;
-        }
+        h2 { border-left: 6px solid #0d6efd; padding-left: 12px; margin-top: 40px; margin-bottom: 20px; font-weight: 600; }
+        .section-box { background: rgba(0,110,255,0.06); border-left: 4px solid #0d6efd; padding: 20px; border-radius: 6px; }
+        .card-custom { border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
     </style>
+
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="../index.html">Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="internship.html">Internship</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link active" href="internship.html">Internship</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h1 class="fw-bold">HSE Internship Experience</h1>
-        <p class="lead mt-3">AI & Automation Centre of Excellence (CoE)</p>
+<!-- HEADER -->
+<header class="py-5 text-center text-white" style="background:#0d6efd;">
+    <h1>Internship Project – HSE AI & Automation</h1>
+    <p class="lead">AI & Automation Centre of Excellence (CoE)</p>
+</header>
+
+<div class="container my-5">
+
+    <section>
+        <h2>Project Overview</h2>
+        <div class="section-box">
+            <p>
+                During my internship with the <strong>HSE AI & Automation Centre of Excellence (CoE)</strong>, I worked across digital automation, AI governance, workflow design, and RPA operations. I gained hands-on experience building automation solutions, assessing AI systems for compliance, and supporting operational teams across national healthcare services.
+            </p>
+        </div>
     </section>
 
-    <div class="container py-5">
-
-        <!-- OVERVIEW -->
-        <h2 class="section-title">Overview</h2>
-        <p>
-            During my internship with the <strong>HSE AI & Automation Centre of Excellence (CoE)</strong>, 
-            I worked across digital automation, AI governance, workflow design, and RPA operations. 
-            I gained hands-on experience building automation solutions, assessing AI systems for compliance, 
-            and supporting operational teams across national healthcare services.
-        </p>
-
-        <div class="row mt-4">
-
-            <!-- CARD 1 -->
-            <div class="col-md-6 mb-4">
+    <section>
+        <h2>Work & Responsibilities</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
                 <div class="card card-custom p-4">
                     <h4 class="fw-bold">Power Automate Development</h4>
-                    <p>
-                        I designed and built automation workflows using Microsoft Power Automate. 
-                        This included extracting Microsoft Forms responses, building variables, 
-                        processing data, and automatically adding structured rows to Excel tables 
-                        stored in OneDrive for Business.
-                    </p>
+                    <p>I designed and built automation workflows using Microsoft Power Automate, extracting Microsoft Forms responses, processing data, and writing structured rows to Excel tables in OneDrive for Business.</p>
                     <ul>
                         <li>Microsoft Forms → Power Automate → Excel integration</li>
-                        <li>Use of triggers, response parsing, and variable creation</li>
-                        <li>Workflow automation for HSE Interim Assessments</li>
+                        <li>Triggers, parsing and variable creation</li>
+                        <li>Automation for HSE Interim Assessments</li>
                     </ul>
                 </div>
             </div>
-
-            <!-- CARD 2 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6">
                 <div class="card card-custom p-4">
                     <h4 class="fw-bold">RPA Operations & Incident Support</h4>
-                    <p>
-                        I gained exposure to HSE's robotic process automation environment, learning 
-                        how automated workflows operate across financial and clinical systems. 
-                        I reviewed RPA failure cases within Dynamics 365 and learned how incidents are 
-                        escalated and resolved.
-                    </p>
-                    <ul>
-                        <li>Understanding UiPath selector failures</li>
-                        <li>Incident life cycle: Identification → Development → Testing</li>
-                        <li>Working within Dynamics 365 case management</li>
-                    </ul>
+                    <p>I reviewed RPA failure cases within Dynamics 365, investigated selector issues, and supported incident lifecycle activities (Identification → Development → Testing).</p>
                 </div>
             </div>
-
-            <!-- CARD 3 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6">
                 <div class="card card-custom p-4">
                     <h4 class="fw-bold">AI Governance & Compliance</h4>
-                    <p>
-                        I supported AI governance activities by working with the HSE AI Inventory, ensuring 
-                        systems met national and EU AI Act requirements. This involved completing structured 
-                        AI assessment templates and ensuring ethical, safe, and transparent AI use.
-                    </p>
-                    <ul>
-                        <li>AI Inventory registration</li>
-                        <li>Risk categorisation (Minimal, Limited, High-risk)</li>
-                        <li>Awareness of DPIA / FRIA requirements</li>
-                        <li>Understanding Responsible AI principles</li>
-                    </ul>
+                    <p>Worked with the HSE AI Inventory and completed structured AI assessment templates to ensure systems met national and EU AI Act requirements.</p>
                 </div>
             </div>
-
-            <!-- CARD 4 -->
-            <div class="col-md-6 mb-4">
+            <div class="col-md-6">
                 <div class="card card-custom p-4">
-                    <h4 class="fw-bold">Strategic Project Exposure</h4>
-                    <p>
-                        I worked with documentation for the Sláintecare Integration Innovation Fund (SIIF), 
-                        reviewing AI strategic priority templates. This allowed me to understand how AI 
-                        projects are evaluated, prioritised, and delivered within a national healthcare setting.
-                    </p>
-                    <ul>
-                        <li>Problem and impact analysis</li>
-                        <li>Stakeholder mapping and evaluation planning</li>
-                        <li>AI delivery models: Buy, Build, Guidance</li>
-                    </ul>
+                    <h4 class="fw-bold">Strategic Exposure</h4>
+                    <p>Assisted with documentation for strategic funds and evaluated AI project prioritisation criteria.</p>
                 </div>
             </div>
-
         </div>
+    </section>
 
-        <!-- SKILLS SECTION -->
-        <h2 class="section-title mt-5">Skills Gained</h2>
-        <div class="row">
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">Automation Workflow Design</div></div>
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">AI Governance & Risk Analysis</div></div>
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">Microsoft Power Platform</div></div>
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">RPA Support & Troubleshooting</div></div>
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">Dynamics 365 Case Management</div></div>
-            <div class="col-md-4 mb-3"><div class="card card-custom p-3">Documentation & Compliance</div></div>
+    <section>
+        <h2>Skills Gained</h2>
+        <div class="section-box">
+            <ul>
+                <li>Automation Workflow Design</li>
+                <li>AI Governance & Risk Analysis</li>
+                <li>Microsoft Power Platform</li>
+                <li>RPA Support & Troubleshooting</li>
+                <li>Dynamics 365 Case Management</li>
+                <li>Documentation & Compliance</li>
+            </ul>
         </div>
+    </section>
 
-    </div>
+</div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- FOOTER -->
+<footer class="text-center py-3 bg-dark text-white">
+    © 2025 Therly Kabasele — Internship Project
+</footer>
 
-    <!-- Custom JS -->
-    <script src="../javscript/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../javscript/script.js"></script>
 
 </body>
 </html>
