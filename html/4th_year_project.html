@@ -93,7 +93,7 @@
             </p>
         </div>
     <!-- rename this file to match whatever you upload -->
-    <img src="../images/odoo_main_page.png" class="img-fluid rounded shadow" alt="Odoo database locked screen" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- thumbnail moved to gallery below -->
     </section>
 
     <!-- COMMUNICATION / DISCUSS APP -->
@@ -114,7 +114,7 @@
                 These channels help separate urgent operational messages from social conversations and admin tasks.
             </p>
         </div>
-    <img src="../images/oodoo_discuss_page.png" class="img-fluid rounded shadow" alt="Odoo Discuss channels" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- thumbnail moved to gallery below -->
     </section>
 
     <!-- DASHBOARDS -->
@@ -136,7 +136,7 @@
                 These KPIs help managers quickly understand the volume and status of support requests.
             </p>
         </div>
-    <img src="../images/odoo_dashboard.png" class="img-fluid rounded shadow" alt="Helpdesk dashboard with KPIs and charts" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- thumbnail moved to gallery below -->
     </section>
 
     <!-- HELPDESK OVERVIEW -->
@@ -154,7 +154,7 @@
                 <li>SLA success rate across the helpdesk</li>
             </ul>
         </div>
-    <img src="../images/odoo_helpdesk.png" class="img-fluid rounded shadow" alt="Helpdesk overview screen" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- thumbnail moved to gallery below -->
     </section>
 
     <!-- MY TICKETS -->
@@ -167,7 +167,7 @@
                 shows tickets assigned to me with filters for status and SLA deadlines.
             </p>
         </div>
-    <img src="../images/odoo_helpdesk1.png" class="img-fluid rounded shadow" alt="My tickets view for Therly as agent" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- thumbnail moved to gallery below -->
     </section>
 
     <!-- LIST / KANBAN / REPORTING -->
@@ -186,9 +186,82 @@
                 These views make it easy to see bottlenecks and balance tickets between agents.
             </p>
         </div>
-    <img src="../images/odoo_helpdesk3.png" class="img-fluid rounded shadow" alt="List view of all tickets" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
-    <img src="../images/odoo_helpdesk4.png" class="img-fluid rounded shadow" alt="Kanban view of all tickets" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
-    <img src="../images/odoo_chart.png" class="img-fluid rounded shadow" alt="Graph report for tickets" onerror="if(!this.dataset.attempt){this.dataset.attempt=1; this.src=this.src.replace('../images/','/images/');} else if(this.dataset.attempt=='1'){this.dataset.attempt=2; this.src='/CA2_portfolio/images/'+this.src.split('/').pop();} else {this.style.display='none';}">
+    <!-- Gallery thumbnails for all Odoo screenshots -->
+    <div class="row g-2 mb-3" id="odoo-thumbs">
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_main_page.png" class="img-fluid rounded shadow thumb" alt="Odoo main page" data-gallery="odoo" data-index="0" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_discuss.png" class="img-fluid rounded shadow thumb" alt="Odoo Discuss" data-gallery="odoo" data-index="1" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_dashboard.png" class="img-fluid rounded shadow thumb" alt="Odoo dashboard" data-gallery="odoo" data-index="2" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_helpdesk.png" class="img-fluid rounded shadow thumb" alt="Helpdesk overview" data-gallery="odoo" data-index="3" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_my_tickets.png" class="img-fluid rounded shadow thumb" alt="My tickets" data-gallery="odoo" data-index="4" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_all_tickets_list.png" class="img-fluid rounded shadow thumb" alt="Tickets list" data-gallery="odoo" data-index="5" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_all_tickets_kanban.png" class="img-fluid rounded shadow thumb" alt="Tickets kanban" data-gallery="odoo" data-index="6" loading="lazy">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="../images/odoo_all_tickets_graph.png" class="img-fluid rounded shadow thumb" alt="Tickets graph" data-gallery="odoo" data-index="7" loading="lazy">
+        </div>
+    </div>
+
+    <!-- Modal gallery for Odoo -->
+    <div class="modal fade" id="modal-odoo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div id="carouselOdooModal" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../images/odoo_main_page.png" class="d-block w-100 img-fluid" alt="Odoo main page">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_discuss.png" class="d-block w-100 img-fluid" alt="Odoo Discuss">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_dashboard.png" class="d-block w-100 img-fluid" alt="Odoo dashboard">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_helpdesk.png" class="d-block w-100 img-fluid" alt="Helpdesk overview">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_my_tickets.png" class="d-block w-100 img-fluid" alt="My tickets">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_all_tickets_list.png" class="d-block w-100 img-fluid" alt="Tickets list">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_all_tickets_kanban.png" class="d-block w-100 img-fluid" alt="Tickets kanban">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../images/odoo_all_tickets_graph.png" class="d-block w-100 img-fluid" alt="Tickets graph">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselOdooModal" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselOdooModal" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
 
     <!-- TECHNOLOGIES -->
@@ -228,5 +301,33 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../javscript/script.js"></script>
+<script>
+// Wire thumbnails to open the appropriate modal carousel and move to clicked index
+document.addEventListener('DOMContentLoaded', function () {
+    const thumbs = document.querySelectorAll('img.thumb[data-gallery]');
+    thumbs.forEach(function(thumb){
+        thumb.addEventListener('click', function(){
+            const gallery = thumb.getAttribute('data-gallery');
+            const index = parseInt(thumb.getAttribute('data-index'), 10) || 0;
+            const modalId = 'modal-' + gallery;
+            const carouselId = 'carousel' + gallery.charAt(0).toUpperCase() + gallery.slice(1) + 'Modal';
+
+            const modalEl = document.getElementById(modalId);
+            if (!modalEl) return;
+            const bsModal = new bootstrap.Modal(modalEl);
+            bsModal.show();
+
+            modalEl.addEventListener('shown.bs.modal', function onShown() {
+                modalEl.removeEventListener('shown.bs.modal', onShown);
+                const carouselEl = document.getElementById(carouselId);
+                if (!carouselEl) return;
+                const carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl, {ride:false});
+                // move to requested slide
+                carousel.to(index);
+            });
+        });
+    });
+});
+</script>
 </body>
 </html>
