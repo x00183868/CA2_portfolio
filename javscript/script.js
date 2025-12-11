@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 return;
             }
-            // plain filenames (education.html, internship.html, etc.) should point to html/ when on root
             if (/^[A-Za-z0-9_\-]+\.html$/.test(href)) {
                 if (!inHtmlFolder) a.setAttribute('href', 'html/' + href);
                 // if inHtmlFolder, leave as-is (they are sibling pages)
