@@ -205,9 +205,32 @@
                 <button class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <p>Email: x00183868@mytudublin.ie</p>
-                <p>Phone: +353 123 456 789</p>
-                <p><a href="https://linkedin.com/in/therly-kabasele-0838892b4" target="_blank" rel="noopener noreferrer">Visit my LinkedIn profile</a></p>
+                                <p>Email: <button id="emailChooserBtn" class="btn btn-link p-0 align-baseline">x00183868@mytudublin.ie</button></p>
+                                <p>Phone: +353 123 456 789</p>
+                                <p><a href="https://linkedin.com/in/therly-kabasele-0838892b4" target="_blank" rel="noopener">Visit my LinkedIn profile</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Email provider chooser modal -->
+<div class="modal fade" id="emailChooserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Send email via</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="d-grid gap-2">
+                    <button id="btn-gmail" class="btn btn-outline-primary">Gmail</button>
+                    <button id="btn-outlook" class="btn btn-outline-primary">Outlook.com</button>
+                    <button id="btn-yahoo" class="btn btn-outline-primary">Yahoo Mail</button>
+                    <button id="btn-mailto" class="btn btn-secondary">Open mailto:</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cancel</button>
             </div>
         </div>
     </div>

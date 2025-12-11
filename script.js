@@ -144,4 +144,60 @@ document.addEventListener('DOMContentLoaded', function () {
     initGPADisplays();
 });
 
+// =========================================================
+// Contact email chooser (Gmail/Outlook/Yahoo)
+// =========================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const emailBtn = document.getElementById('emailChooserBtn');
+    const chooserModalEl = document.getElementById('emailChooserModal');
+    if (!emailBtn || !chooserModalEl) return;
+
+    const chooserModal = new bootstrap.Modal(chooserModalEl);
+    emailBtn.addEventListener('click', () => {
+        chooserModal.show();
+    });
+
+    const recipient = 'x00183868@mytudublin.ie';
+
+    // Buttons
+    const btnGmail = document.getElementById('btn-gmail');
+    const btnOutlook = document.getElementById('btn-outlook');
+    const btnYahoo = document.getElementById('btn-yahoo');
+    const btnMailto = document.getElementById('btn-mailto');
+
+    function openInNewTab(url) {
+        window.open(url, '_blank', 'noopener');
+        chooserModal.hide();
+    }
+
+    if (btnGmail) {
+        btnGmail.addEventListener('click', () => {
+            const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}`;
+            openInNewTab(url);
+        });
+    }
+
+    if (btnOutlook) {
+        btnOutlook.addEventListener('click', () => {
+            const url = `https://outlook.live.com/owa/?path=/mail/action/compose&to=${encodeURIComponent(recipient)}`;
+            openInNewTab(url);
+        });
+    }
+
+    if (btnYahoo) {
+        btnYahoo.addEventListener('click', () => {
+            const url = `https://compose.mail.yahoo.com/?to=${encodeURIComponent(recipient)}`;
+            openInNewTab(url);
+        });
+    }
+
+    if (btnMailto) {
+        btnMailto.addEventListener('click', () => {
+            const mailto = `mailto:${recipient}`;
+            window.location.href = mailto;
+            chooserModal.hide();
+        });
+    }
+});
+
 
