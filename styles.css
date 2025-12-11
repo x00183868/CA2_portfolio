@@ -1,0 +1,267 @@
+/*/*
+
+  styles.css  styles.css
+
+  Re-created valid CSS (previous file contained JavaScript).  Re-created valid CSS (previous file contained JavaScript).
+
+  Contains: base styles, loader, dark-mode tweaks, progress bars, and small helpers.  Contains: base styles, loader, dark-mode tweaks, progress bars, and small helpers.
+
+*/*/
+
+
+
+/* Basic reset *//* Basic reset */
+
+* { box-sizing: border-box; }* { box-sizing: border-box; }
+
+html, body { height: 100%; }html, body { height: 100%; }
+
+body {body {
+
+  margin: 0;  margin: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+  line-height: 1.5;  line-height: 1.5;
+
+  background: #ffffff;  background: #ffffff;
+
+  color: #1f2937;  color: #1f2937;
+
+  transition: background-color 0.3s ease, color 0.3s ease;  transition: background-color 0.3s ease, color 0.3s ease;
+
+}}
+
+
+
+/* Ensure content doesn't hide under fixed navbar *//* Ensure content doesn't hide under fixed navbar */
+
+body { padding-top: 72px; }body { padding-top: 72px; }
+
+
+
+/* Loader overlay *//* Loader overlay */
+
+.loader-overlay {.loader-overlay {
+
+  position: fixed;  position: fixed;
+
+  inset: 0;  inset: 0;
+
+  background: rgba(255,255,255,0.95);  background: rgba(255,255,255,0.95);
+
+  display: flex;  display: flex;
+
+  align-items: center;  align-items: center;
+
+  justify-content: center;  justify-content: center;
+
+  z-index: 9999;  z-index: 9999;
+
+  transition: opacity 0.5s ease;  transition: opacity 0.5s ease;
+
+}}
+
+.spinner {.spinner {
+
+  width: 48px;  width: 48px;
+
+  height: 48px;  height: 48px;
+
+  border-radius: 50%;  border-radius: 50%;
+
+  border: 6px solid rgba(0,0,0,0.07);  border: 6px solid rgba(0,0,0,0.07);
+
+  border-top-color: #0d6efd; /* bootstrap primary */  border-top-color: #0d6efd; /* bootstrap primary */
+
+  animation: spin 1s linear infinite;  animation: spin 1s linear infinite;
+
+}}
+
+@keyframes spin { to { transform: rotate(360deg); } }@keyframes spin { to { transform: rotate(360deg); } }
+
+
+
+/* Progress bars (skills) *//* Progress bars (skills) */
+
+.progress { background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden; }.progress { background: #e9ecef; height: 20px; border-radius: 10px; overflow: hidden; }
+
+.progress-bar {.progress-bar {
+
+  height: 100%;  height: 100%;
+
+  width: 0;  width: 0;
+
+  background: linear-gradient(90deg, #0d6efd, #6610f2);  background: linear-gradient(90deg, #0d6efd, #6610f2);
+
+  transition: width 1s ease;  transition: width 1s ease;
+
+}}
+
+
+
+
+
+/* Filter buttons *//* Filter buttons */
+
+.filter-btn.active { background-color: #0d6efd; color: #fff; border-color: #0d6efd; }.filter-btn.active { background-color: #0d6efd; color: #fff; border-color: #0d6efd; }
+
+
+
+/* Card tweaks *//* Card tweaks */
+
+.project-card { display: block; }.project-card { display: block; }
+
+
+
+/* Dark mode overrides *//* Dark mode overrides */
+
+.dark-mode {.dark-mode {
+
+  background: #0b1220;  background: #0b1220;
+
+  color: #e6eef6;  color: #e6eef6;
+
+}}
+
+.dark-mode .loader-overlay { background: rgba(6,8,10,0.95); }.dark-mode .loader-overlay { background: rgba(6,8,10,0.95); }
+
+.dark-mode .progress { background: rgba(255,255,255,0.06); }.dark-mode .progress { background: rgba(255,255,255,0.06); }
+
+.dark-mode .progress-bar { background: linear-gradient(90deg, #6ea8fe, #9b6bff); }.dark-mode .progress-bar { background: linear-gradient(90deg, #6ea8fe, #9b6bff); }
+
+.dark-mode .navbar, .dark-mode .bg-dark { background-color: #0b1220 !important; }.dark-mode .navbar, .dark-mode .bg-dark { background-color: #0b1220 !important; }
+
+
+
+/* Small responsive helpers *//* Small responsive helpers */
+
+@media (max-width: 576px) {@media (max-width: 576px) {
+
+  body { padding-top: 64px; }  body { padding-top: 64px; }
+
+}}
+
+
+
+/* Profile photo sizing and fallback *//* Profile photo sizing and fallback */
+
+.profile-photo { width: 160px; height: 160px; object-fit: cover; display: inline-block; }.profile-photo { width: 160px; height: 160px; object-fit: cover; display: inline-block; }
+
+.avatar-fallback {.avatar-fallback {
+
+  width: 160px;  width: 160px;
+
+  height: 160px;  height: 160px;
+
+  display: inline-flex;  display: inline-flex;
+
+  align-items: center;  align-items: center;
+
+  justify-content: center;  justify-content: center;
+
+  background: #e9ecef;  background: #e9ecef;
+
+  color: #1f2937;  color: #1f2937;
+
+  font-weight: 700;  font-weight: 700;
+
+  font-size: 40px;  font-size: 40px;
+
+  border-radius: 50%;  border-radius: 50%;
+
+}}
+
+
+
+/* Education tables: make them compact and readable *//* Education tables: make them compact and readable */
+
+.year-table {.year-table {
+
+  margin-bottom: 0.5rem;  margin-bottom: 0.5rem;
+
+}}
+
+.year-card h4 { margin-top: 0; }.year-card h4 { margin-top: 0; }
+
+
+
+/* GPA input row *//* GPA input row */
+
+.year-gpa { font-weight: 600; }.year-gpa { font-weight: 600; }
+
+.year-gpa span { color: #0d6efd; cursor: pointer; }.year-gpa span { color: #0d6efd; cursor: pointer; }
+
+.year-gpa span.placeholder { color: #6c757d; cursor: default; }.year-gpa span.placeholder { color: #6c757d; cursor: default; }
+
+
+
+/* Show dropdown on hover for larger screens *//* Show dropdown on hover for larger screens */
+
+@media (min-width: 992px) {@media (min-width: 992px) {
+
+  .navbar .dropdown:hover .dropdown-menu {  .navbar .dropdown:hover .dropdown-menu {
+
+    display: block;    display: block;
+
+    margin-top: 0;    margin-top: 0;
+
+  }  }
+
+  /* slight indicator rotation on hover */  /* slight indicator rotation on hover */
+
+  .navbar .dropdown-toggle::after { transition: transform .2s ease; }  .navbar .dropdown-toggle::after { transition: transform .2s ease; }
+
+  .navbar .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }  .navbar .dropdown:hover .dropdown-toggle::after { transform: rotate(180deg); }
+
+}}
+
+
+
+/* Thumbnail style for galleries *//* Thumbnail style for galleries */
+
+.thumb { cursor: pointer; border: 1px solid rgba(13,110,253,0.15); }.thumb { cursor: pointer; border: 1px solid rgba(13,110,253,0.15); }
+
+.thumb:hover { transform: translateY(-3px); transition: transform .15s ease; }.thumb:hover { transform: translateY(-3px); transition: transform .15s ease; }
+
+
+
+/* Make gallery images smaller and contained inside modal/carousel *//* Make gallery images smaller and contained inside modal/carousel */
+
+/* Thumbnails *//* Thumbnails */
+
+.thumb { height: 110px; object-fit: cover; width: 100%; }.thumb { height: 110px; object-fit: cover; width: 100%; }
+
+
+
+/* Carousel / modal images: limit height to viewport and keep aspect ratio *//* Carousel / modal images: limit height to viewport and keep aspect ratio */
+
+.modal .img-fluid, .carousel .img-fluid {.modal .img-fluid, .carousel .img-fluid {
+
+  max-height: 65vh; /* keep below viewport height */  max-height: 65vh; /* keep below viewport height */
+
+  width: auto;      /* avoid forcing full width */  width: auto;      /* avoid forcing full width */
+
+  margin-left: auto;  margin-left: auto;
+
+  margin-right: auto;  margin-right: auto;
+
+  display: block;  display: block;
+
+  object-fit: contain;  object-fit: contain;
+
+}}
+
+
+
+/* On small screens reduce thumbnail height *//* On small screens reduce thumbnail height */
+
+@media (max-width: 576px) {@media (max-width: 576px) {
+
+  .thumb { height: 80px; }  .thumb { height: 80px; }
+
+  .modal .img-fluid, .carousel .img-fluid { max-height: 55vh; }  .modal .img-fluid, .carousel .img-fluid { max-height: 55vh; }
+
+}}
+
+
